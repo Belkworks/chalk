@@ -22,6 +22,13 @@ Chalk.light.blue.bg.yellow('wow')
 -- 'wow' with light blue text and a yellow background
 ```
 
+You can save and reuse Chalk functions multiple times.
+```lua
+lightred = Chalk.light.red
+lightred('hello') -- 'hello' with ANSI light red
+lightred('world') -- 'world' with ANSI light red
+```
+
 By default, Chalk is styling the foreground properties.
 
 ### Extra Functions
