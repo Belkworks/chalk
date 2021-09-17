@@ -49,6 +49,7 @@ reset = '\27[0m'
 
 WRITE = rconsoleprint or io.write
 CLEAR = rconsoleclear or -> error 'clear not supported!'
+TITLE = rconsolename or -> error 'title not supported!'
 
 Default = {
 	fg:
@@ -75,6 +76,7 @@ Chalk = (Data) ->
 		write: multiwrite
 		print: multiprint
 		clear: CLEAR
+		title: TITLE
 	}
 
 	setmetatable T,

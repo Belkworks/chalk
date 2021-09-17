@@ -89,6 +89,9 @@ local WRITE = rconsoleprint or io.write
 local CLEAR = rconsoleclear or function()
   return error('clear not supported!')
 end
+local TITLE = rconsolename or function()
+  return error('title not supported!')
+end
 local Default = {
   fg = {
     color = 'white',
@@ -132,7 +135,8 @@ Chalk = function(Data)
   local T = {
     write = multiwrite,
     print = multiprint,
-    clear = CLEAR
+    clear = CLEAR,
+    title = TITLE
   }
   return setmetatable(T, {
     __call = function(self, ...)
