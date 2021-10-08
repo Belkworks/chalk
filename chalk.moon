@@ -70,11 +70,15 @@ multiprint = (...) ->
 	table.insert args, '\n'
 	multiwrite unpack args
 
+format = (s, ...) ->
+	multiprint s\format ...
+
 Chalk = (Data) ->
 	Data = cloneDeep Default unless Data 
 	T = {
 		write: multiwrite
 		print: multiprint
+		printf: format
 		clear: CLEAR
 		title: TITLE
 	}

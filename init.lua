@@ -127,6 +127,10 @@ multiprint = function(...)
   table.insert(args, '\n')
   return multiwrite(unpack(args))
 end
+local format
+format = function(s, ...)
+  return multiprint(s:format(...))
+end
 local Chalk
 Chalk = function(Data)
   if not (Data) then
@@ -135,6 +139,7 @@ Chalk = function(Data)
   local T = {
     write = multiwrite,
     print = multiprint,
+    printf = format,
     clear = CLEAR,
     title = TITLE
   }
